@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:http/http.dart' show Client;
 import 'package:news/src/model/item_model.dart';
+import 'package:news/src/resources/repository.dart';
 //
 final root = "https://hacker-news.firebaseio.com/v0/";
-class NewsApiProvider{
+class NewsApiProvider implements Source{
   
   Client client = Client();
   Future<List<int>> fetchTopIds() async{
